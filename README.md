@@ -1,28 +1,27 @@
+[![Gem Version](https://badge.fury.io/rb/fluent-plugin-bugsnag.svg)](http://badge.fury.io/rb/fluent-plugin-bugsnag)
+![Build Status](https://circleci.com/gh/koshigoe/fluent-plugin-bugsnag.svg?style=shield)
+
 # Fluent::Plugin::Bugsnag
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/fluent/plugin/bugsnag`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-```ruby
-gem 'fluent-plugin-bugsnag'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install fluent-plugin-bugsnag
+    $ fluent-gem install fluent-plugin-bugsnag
 
 ## Usage
 
-TODO: Write usage instructions here
+```
+<match bugsnag.deliver>
+  type bugsnag
+
+  # bugsnag_proxy_host localhost
+  # bugsnag_proxy_port 8888
+  # bugsnag_proxy_user user
+  # bugsnag_proxy_password password
+  # bugsnag_timeout 10
+</match>
+```
 
 ## Development
 
@@ -32,7 +31,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/fluent-plugin-bugsnag/fork )
+1. Fork it ( https://github.com/koshigoe/fluent-plugin-bugsnag/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
