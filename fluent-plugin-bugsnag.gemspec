@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Fluentd output plubin for Bugsnag.}
   spec.description   = %q{Fluentd output plubin for Bugsnag.}
-  spec.homepage      = "https://github.com/koshigoe/fluent-plugin-bugsnag"
+  spec.homepage      = "https://github.com/feedforce/fluent-plugin-bugsnag"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }

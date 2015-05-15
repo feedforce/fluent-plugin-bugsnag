@@ -1,5 +1,5 @@
 [![Gem Version](https://badge.fury.io/rb/fluent-plugin-bugsnag.svg)](http://badge.fury.io/rb/fluent-plugin-bugsnag)
-![Build Status](https://circleci.com/gh/koshigoe/fluent-plugin-bugsnag.svg?style=shield)
+![Build Status](https://circleci.com/gh/feedforce/fluent-plugin-bugsnag.svg?style=shield)
 
 # Fluent::Plugin::Bugsnag
 
@@ -31,7 +31,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-1. Fork it ( https://github.com/koshigoe/fluent-plugin-bugsnag/fork )
+1. Fork it ( https://github.com/feedforce/fluent-plugin-bugsnag/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
