@@ -28,7 +28,7 @@ class HogeOutputTest < Test::Unit::TestCase
     assert_equal 10, d.instance.bugsnag_timeout
   end
 
-  def test_write
+  def test_write_without_options
     d = create_driver ''
 
     stub_request(:post, "https://www.example.com/")
@@ -37,6 +37,39 @@ class HogeOutputTest < Test::Unit::TestCase
 
     time = Time.parse("2011-01-02 13:14:15 UTC").to_i
     d.emit({'url' => 'https://www.example.com/', 'body' => 'json'}, time)
+    d.run
+  end
+
+  def test_write_with_empty_options
+    d = create_driver ''
+
+    stub_request(:post, "https://www.example.com/")
+      .with(:body => 'json', :headers => {'Content-Type' => 'application/json'})
+      .to_return(:status => 200, :body => "", :headers => {})
+
+    time = Time.parse("2011-01-02 13:14:15 UTC").to_i
+    d.emit({'url' => 'https://www.example.com/', 'body' => 'json', 'options' => {}}, time)
+    d.run
+  end
+
+  def test_write_with_options_including_headers
+    d = create_driver ''
+
+    stub_request(:post, "https://www.example.com/")
+      .with(:body => 'json', :headers => {'Content-Type' => 'application/json', 'Bugsnag-Payload-Version' => '4.0'})
+      .to_return(:status => 200, :body => "", :headers => {})
+
+    time = Time.parse("2011-01-02 13:14:15 UTC").to_i
+    data = {
+      'url' => 'https://www.example.com/',
+      'body' => 'json',
+      'options' => {
+        'headers' => {
+          'Bugsnag-Payload-Version' => '4.0'
+        }
+      }
+    }
+    d.emit(data, time)
     d.run
   end
 end
