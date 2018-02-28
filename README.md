@@ -1,5 +1,5 @@
 [![Gem Version](https://badge.fury.io/rb/fluent-plugin-bugsnag.svg)](http://badge.fury.io/rb/fluent-plugin-bugsnag)
-![Build Status](https://circleci.com/gh/feedforce/fluent-plugin-bugsnag.svg?style=shield)
+[![Build Status](https://travis-ci.org/feedforce/fluent-plugin-bugsnag.svg?branch=master)](https://travis-ci.org/feedforce/fluent-plugin-bugsnag)
 
 # Fluent::Plugin::Bugsnag
 
